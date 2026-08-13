@@ -57,7 +57,7 @@ This is only and example, which you can adjust to your own needs. There are cert
 
    **Change COMPOSE_DIR to the path of where you checked out this repository.**
 
-7. run `source ~/.profile` or `source ~/.bashrc`.   after that, you can cd to on of your projects on the host machine, and simply run ``claude-dev`` . It will start the conatiner ==(which needs to have been built first!!!)== ,and inside the container, you will already be in your project directory. 
+7. run `source ~/.profile` or `source ~/.bashrc`.   after that, you can cd to one of your projects on the host machine, and simply run ``claude-dev`` . It will start the conatiner ==(which needs to have been built first!!!)== ,and inside the container, you will already be in your project directory. 
 
 8. Run ``claude`` ,and on the first time, you will be asked to authenticate. 
 
