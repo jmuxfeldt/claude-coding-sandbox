@@ -29,8 +29,8 @@ This is only and example, which you can adjust to your own needs. There are cert
 
 1. Clone the master branch. 
 
-2. Copy .env,example to .env and edit .env. In my case,  
-   HOME_DIR  is exactly like on macos: /Users/myUserName , and the WORKING_DIR  is /Users/myUserName/myCodingDir.
+2. Copy .env.example to .env and edit .env. In my case,  
+   HOME_DIR  is exactly like on macOS: /Users/myUserName , and the WORKING_DIR  is /Users/myUserName/myCodingDir.
    On Windows or on Linux this will be different. 
 
 3. (optional) Edit .bashrc to your own preferences.  Also, change php.ini, if you think it is needed. 
