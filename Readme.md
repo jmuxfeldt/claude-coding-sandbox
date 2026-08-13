@@ -37,28 +37,25 @@ This is only and example, which you can adjust to your own needs. There are cert
 
 4. (optional)  Add any special mounts to the docker-compose file. If they mount into new directories, you must create these directories in the Dockerfile. 
 
-5. Inside the Sandbox docker directory, run the following once: 
-
-   ```bash
-   docker compose up -d --build  # the --build is only necessary if you change .env, Dockerfile, or docker-compose.yaml
-   ```
-
-6. Add the following function to your ~/.profile or ~/.bashrc file: edit CHANGE_ME!!
+5. Add the following function to your ~/.profile or ~/.bashrc file: edit CHANGE_ME!!
 
    ```bash
    claude-dev() {
      DIR=$(pwd)
-     COMPOSE_DIR=/CHANGE_ME
-     docker compose --env-file ${COMPOSE_DIR}/.env -f ${COMPOSE_DIR}/docker-compose.yml up -d && \
+     COMPOSE_DIR=CHANGE_ME ##CHANGE!!!
+     local BUILD_FLAG=""
+     if [[ "$1" == "--build" ]]; then
+       BUILD_FLAG="--build"
+     fi
+     docker compose --env-file ${COMPOSE_DIR}/.env -f ${COMPOSE_DIR}/docker-compose.yml up -d $BUILD_FLAG && \
      docker exec -it claude-dev bash -c "cd '$DIR'; exec bash"
    }
-   
    ```
 
    **Change COMPOSE_DIR to the path of where you checked out this repository.**
 
-7. run `source ~/.profile` or `source ~/.bashrc`.   after that, you can cd to one of your projects on the host machine, and simply run ``claude-dev`` . It will start the container *(which needs to have been built first!!!)* ,and inside the container, you will already be in your project directory. 
+7. run `source ~/.profile` or `source ~/.bashrc`.   after that, you can cd to one of your projects on the host machine, and simply run ``claude-dev`` . It will start (and if necessary build) the container, and inside the container, you will already be in your project directory.  
 
-8. Run ``claude`` ,and on the first time, you will be asked to authenticate. 
+8. Run ``claude``, and on the first time, you will be asked to authenticate. 
 
 9. Your claude memory and other settings are now shared correctly between the host and sandbox. 
