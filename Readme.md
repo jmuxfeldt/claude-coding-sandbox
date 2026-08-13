@@ -40,7 +40,7 @@ This is only and example, which you can adjust to your own needs. There are cert
 5. Inside the Sandbox docker directory, run the following once: 
 
    ```bash
-   docker compose up -d --build  # the --build is only necessary on if you change .env or docker-compose.yaml
+   docker compose up -d --build  # the --build is only necessary if you change .env, Dockerfile, or docker-compose.yaml
    ```
 
 6. Add the following function to your ~/.profile or ~/.bashrc file:
