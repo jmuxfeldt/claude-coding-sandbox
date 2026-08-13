@@ -1,0 +1,26 @@
+services:
+  claude-dev:
+    build:
+      context: .
+      args:
+        WORKING_DIR: ${WORKING_DIR}    
+        HOME_DIR: ${HOME_DIR}    
+    container_name: claude-dev
+    working_dir: ${WORKING_DIR}
+    environment:
+      - PS1=root@claude-dev:\w#
+    stdin_open: true
+    tty: true
+    volumes:
+      - ${WORKING_DIR}:${WORKING_DIR}
+      - ${HOME_DIR}/.claude:${HOME_DIR}/.claude
+      - ${HOME_DIR}/.config/claude:${HOME_DIR}/.config/claude
+      - ${HOME_DIR}/.memsearch:${HOME_DIR}/.memsearch
+      - ${HOME_DIR}/.mempalace:${HOME_DIR}/.mempalace
+      - .bashrc:${HOME_DIR}/.bashrc:ro
+    networks:
+      - gateway
+
+networks:
+  gateway:
+    external: true
