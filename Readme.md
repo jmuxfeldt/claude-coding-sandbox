@@ -43,7 +43,7 @@ This is only and example, which you can adjust to your own needs. There are cert
    docker compose up -d --build  # the --build is only necessary if you change .env, Dockerfile, or docker-compose.yaml
    ```
 
-6. Add the following function to your ~/.profile or ~/.bashrc file:
+6. Add the following function to your ~/.profile or ~/.bashrc file: edit CHANGE_ME!!
 
    ```bash
    claude-dev() {
