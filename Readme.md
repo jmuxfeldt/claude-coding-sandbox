@@ -58,4 +58,4 @@ This is only an example, which you can adjust to your own needs. There are certa
 
 8. Now, inside the container, Run ``claude`` .  The first time and after a rebuild, you will be asked to authenticate. 
 
-9. Your claude memory and other settings are now shared correctly between the host and sandbox, *so long as you have mirrored all relevant directories with identical paths*.  You Claude Code now only has access to what you have mounted in the container. 
+9. Your claude memory and other settings are now shared correctly between the host and sandbox, *so long as you have mirrored all relevant directories with identical paths*.  Your Claude Code now only has access to what you have mounted in the container. 
