@@ -4,7 +4,7 @@ For PHP, Node, Python
 
 ## Purpose of this Repository
 
-I was using Claude Code on my bare metal, and noticed that even if I instructed  it in the global Claude.md  not to stray outside the project directory, it would hapily ignore my instructions and run `cat`  on any damned file it felt it needed. It also occasionaly ignores directives in the settings.json. So I decided that for most of my work, I wanted a sandbox for doing my claude coding. 
+I was using Claude Code on my bare metal, and noticed that even if I instructed  it in the global Claude.md  not to stray outside the project directory, it would happily ignore my instructions and run `cat`  on any damned file it felt it needed. It also occasionally ignores directives in the settings.json. So I decided that for most of my work, I wanted a sandbox for doing my Claude coding. 
 
 However, on occasion, I do want to run it on bare metal, e.g. if it needs a resource not installed in the sandbox. This makes it important to construct the sandbox container in such a way, that I mount my configuration paths into the container. In my case, that is:
 
@@ -16,11 +16,11 @@ However, on occasion, I do want to run it on bare metal, e.g. if it needs a reso
 ~/myCodingProjectsDir
 ```
 
-Also, Claude Code stores paths in its configuration files, so the conatainer must have identical paths, otherwise using Claude Code inside the sanbox creates different entries in configs and memory as  outside the sandbox. 
+Also, Claude Code stores paths in its configuration files, so the container must have identical paths, otherwise using Claude Code inside the sandbox creates different entries in configs and memory as  outside the sandbox. 
 
 ## Example Only
 
-This is only an example, which you can adjust to your own needs. There are certain central concepts governing the configurateion:
+This is only an example, which you can adjust to your own needs. There are certain central concepts governing the configuration:
 
 1. An .env file containing a HOME_DIR and a WORKING_DIR variable. These will be  mirrored inside the container according to the docker-compose.yaml and the Docker file. ***The $HOME directory in the docker container is set to HOME_DIR  automatically on build. If you change these, you must rebuild the container.   This part is crucial for Claude Code.***
 2. You can change everything else, in particular which projects you want to mount. Maybe you need to mount several project directories. ***Claude doesn't care, so long as they have the same paths inside the container as outside the container***.
@@ -58,4 +58,4 @@ This is only an example, which you can adjust to your own needs. There are certa
 
 8. Now, inside the container, Run ``claude`` .  The first time and after a rebuild, you will be asked to authenticate. 
 
-9. Your claude memory and other settings are now shared correctly between the host and sandbox, *so long as you have mirrored all relevant directories with identical paths*.  Your Claude Code now only has access to what you have mounted in the container. 
+9. Your Claude memory and other settings are now shared correctly between the host and sandbox, *so long as you have mirrored all relevant directories with identical paths*.  Your Claude Code now only has access to what you have mounted in the container. 
