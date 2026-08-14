@@ -58,4 +58,4 @@ This is only an example, which you can adjust to your own needs. There are certa
 
 8. Run ``claude``, and on the first time, you will be asked to authenticate. 
 
-9. Your claude memory and other settings are now shared correctly between the host and sandbox, *so long as you have mirrored all relevant directories with identical paths*. 
+9. Your claude memory and other settings are now shared correctly between the host and sandbox, *so long as you have mirrored all relevant directories with identical paths*.  You Claude Code now only has access to what you have mounted in the container. 
