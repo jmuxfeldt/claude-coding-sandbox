@@ -20,7 +20,7 @@ Also, Claude Code stores paths in its configuration files, so the conatainer mus
 
 ## Example Only
 
-This is only and example, which you can adjust to your own needs. There are certain central concepts governing the configurateion:
+This is only an example, which you can adjust to your own needs. There are certain central concepts governing the configurateion:
 
 1. An .env file containing a HOME_DIR and a WORKING_DIR variable. These will be  mirrored inside the container according to the docker-compose.yaml and the Docker file. ***The $HOME directory in the docker container is set to HOME_DIR  automatically on build. If you change these, you must rebuild the container.   This part is crucial for Claude Code.***
 2. You can change everything else, in particular which projects you want to mount. Maybe you need to mount several project directories. ***Claude doesn't care, so long as they have the same paths inside the container as outside the container***.
