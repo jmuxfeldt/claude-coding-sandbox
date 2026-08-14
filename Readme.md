@@ -16,7 +16,7 @@ However, on occasion, I do want to run it on bare metal, e.g. if it needs a reso
 ~/myCodingProjectsDir
 ```
 
-Also, Claude Code stores paths in its configuration files, so the container must have identical paths, otherwise using Claude Code inside the sandbox creates different entries in configs and memory as  outside the sandbox. 
+Also, Claude Code stores paths in its configuration files, *so the container must have identical paths*, otherwise using Claude Code inside the sandbox creates different entries in configs and memory as  outside the sandbox. 
 
 ## Example Only
 
