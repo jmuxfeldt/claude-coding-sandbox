@@ -19,7 +19,7 @@ However, on occasion, I do want to run it on bare metal, e.g. if it needs a reso
 Also, Claude Code stores paths in its configuration files, *so the container must have identical paths*, otherwise using Claude Code inside the sandbox creates different entries in configs and memory as  outside the sandbox. 
 ## Bug Reports, Branches
 Bug reports, suggestions, and branches for other dev environments are explicitly welcome. 
-Use https://github.com/jmuxfeldt/claude-coding-sandbox/issues and https://github.com/jmuxfeldt/claude-coding-sandbox/discussions.
+Use [Issues](https://github.com/jmuxfeldt/claude-coding-sandbox/issues) and [Discussions](https://github.com/jmuxfeldt/claude-coding-sandbox/discussions) repectively.
 ## Example Only
 
 This is only an example, which you can adjust to your own needs. There are certain central concepts governing the configuration:
