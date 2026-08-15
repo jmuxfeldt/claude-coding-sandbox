@@ -6,7 +6,7 @@ For PHP, Node, Python
 
 I was using Claude Code on my bare metal, and noticed that even if I instructed  it in the global Claude.md  not to stray outside the project directory, it would happily ignore my instructions and run `cat`  on any damned file it felt it needed. It also occasionally ignores directives in the settings.json. So I decided that for most of my work, I wanted a sandbox for doing my Claude coding. 
 
-However, on occasion, I do want to run it on bare metal, e.g. if it needs a resource not installed in the sandbox. This makes it important to construct the sandbox container in such a way, that I mount my configuration paths into the container. In my case, that is:
+However, on occasion, I do want to run it on bare metal, e.g. if it needs a resource not installed in the sandbox. This makes it important to construct the sandbox container in such a way, that I mount my configuration paths into the container. These must be identical in sandbox and host environment for Claude Code to correctly save memory and configurations. In my case, that is:
 
 ```bash
 ~/.claude
